@@ -387,7 +387,7 @@ public final class ValueLayouts {
     public static final class OfDoubleImpl extends AbstractValueLayout<OfDoubleImpl> implements ValueLayout.OfDouble {
 
         private OfDoubleImpl(ByteOrder order) {
-            super(double.class, order, 64);
+            super(double.class, order, 64, isAixOS ? 32 : 64, Optional.empty());
         }
 
         private OfDoubleImpl(ByteOrder order, long bitAlignment, Optional<String> name) {
